@@ -8,13 +8,24 @@ import {
   MenuIcon,
 } from "@heroicons/react/outline";
 import { HomeIcon } from "@heroicons/react/solid";
+import { signIn, signOut, useSession } from "next-auth/react";
+import { useRouter } from "next/router";
+import { useRecoilState } from "recoil";
+import { modalState } from "../atoms/modalAtom";
 
 function Header() {
+  const { data: session } = useSession();
+  const [open, setOpen] = useRecoilState(modalState);
+  const router = useRouter();
+
   return (
     <div className="shadow-sm border-b bg-white sticky top-0 z-50">
       <div className="flex justify-between max-w-6xl mx-5 xl:mx-auto">
         {/* Left - Branding */}
-        <div className="relative hidden lg:inline-grid w-24 cursor-pointer">
+        <div
+          onClick={() => router.push("/")}
+          className="relative hidden lg:inline-grid w-24 cursor-pointer"
+        >
           <Image
             src="https://links.papareact.com/ocw"
             layout="fill"
@@ -22,7 +33,10 @@ function Header() {
           />
         </div>
 
-        <div className="relative w-10 lg:hidden flex-shrink-0">
+        <div
+          className="relative w-10 lg:hidden flex-shrink-0"
+          onClick={() => router.push("/")}
+        >
           <Image
             src="https://links.papareact.com/jjm"
             layout="fill"
@@ -47,25 +61,35 @@ function Header() {
 
         {/* Right */}
         <div className="flex items-center justify-end space-x-4">
-          <HomeIcon className="button-nav" />
+          <HomeIcon onClick={() => router.push("/")} className="button-nav" />
           <MenuIcon className="h-6 md:hidden cursor-pointer" />
 
-          <div className="relative button-nav">
-            <PaperAirplaneIcon className="button-nav rotate-90" />
-            <div className="absolute -top-1 -right-2 text-xs h-5 w-5 bg-red-600 rounded-full flex items-center justify-center opacity-90 animate-pulse text-white">
-              3
-            </div>
-          </div>
+          {session ? (
+            <>
+              <div className="relative button-nav">
+                <PaperAirplaneIcon className="button-nav rotate-90" />
+                <div className="absolute -top-1 -right-2 text-xs h-5 w-5 bg-red-600 rounded-full flex items-center justify-center opacity-90 animate-pulse text-white">
+                  3
+                </div>
+              </div>
 
-          <PlusCircleIcon className="button-nav" />
-          <UserGroupIcon className="button-nav" />
-          <HeartIcon className="button-nav" />
+              <PlusCircleIcon
+                onClick={() => setOpen(true)}
+                className="button-nav"
+              />
+              <UserGroupIcon className="button-nav" />
+              <HeartIcon className="button-nav" />
 
-          <img
-            src="https://links.papareact.com/3ke"
-            alt="Profile photo"
-            className="h-8 rounded-full cursor-pointer"
-          />
+              <img
+                src={session?.user?.image}
+                alt="Profile photo"
+                className="h-8 w-8 rounded-full cursor-pointer"
+                onClick={signOut}
+              />
+            </>
+          ) : (
+            <button onClick={signIn}>Sign In</button>
+          )}
         </div>
       </div>
     </div>
