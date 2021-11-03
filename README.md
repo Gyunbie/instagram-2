@@ -16,9 +16,12 @@ _Basic clone of Instagram, a social media application._
 
 <!-- SCREENSHOT -->
 <p align="center">
-<img src="/images/Instagram.png">
+<img src="https://github.com/Gyunbie/instagram-2/blob/main/public/images/Instagram.png">
+### [LIVE DEMO] (https://instagram-2-eta.vercel.app/)
 </p>
+
 <!-- LIVE DEMO -->
+
 
 <!--  -->
 <!--  -->
