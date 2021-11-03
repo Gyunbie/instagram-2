@@ -21,7 +21,6 @@ _Basic clone of Instagram, a social media application._
 </p>
 
 <!-- DESCRIPTION -->
-# Summary
 Instagram 2.0 is a fully responsive web application which clones Instagram and is built on React.js. It stores data in Firestore and it uses Fireauth Google sign-in to create accounts. It has post, like and comment functionality. 
 
 
