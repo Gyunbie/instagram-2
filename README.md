@@ -16,13 +16,30 @@ _Basic clone of Instagram, a social media application._
 
 <!-- SCREENSHOT & LIVE DEMO -->
 <p align="center">
-<img src="https://github.com/Gyunbie/instagram-2/blob/main/public/images/Instagram.png">
+<img src="https://github.com/Gyunbie/instagram-2/blob/main/public/images/instagram-2-desktop-mobile.png">
 <h1 align="center"><a href="https://instagram-2-eta.vercel.app">LIVE DEMO</a></h1>
 </p>
 
 <!-- DESCRIPTION -->
+# DESCRIPTION
 Instagram 2.0 is a fully responsive web application which clones Instagram and is built on React.js. It stores data in Firestore and it uses Fireauth Google sign-in to create accounts. It has post, like and comment functionality. 
 
+<!-- FEATURES -->
+# FEATURES
+The technologies used are ***React.js***, ***Next.js***, ***TailwindCSS***, ***Firebase v9***, and ***Recoil***.
+- ***NextAuth*** and ***FirebaseAuth*** to sign in.
+- ***Faker*** to create fake data.
+- ***Firestore*** to store users, images, likes, and comments.
+- ***TailwindUI*** to create a post modal.
+- ***Recoil*** to store the modal state globally.
+
+<!-- FUTURE -->
+# FUTURE SCOPE
+```
+- Following functionality
+- Messaging functionality
+- Notifications
+```
 
 <!--  -->
 <!--  -->
