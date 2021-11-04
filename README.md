@@ -40,10 +40,3 @@ The technologies used are ***React.js***, ***Next.js***, ***TailwindCSS***, ***F
 - Messaging functionality
 - Notifications
 ```
-
-<!--  -->
-<!--  -->
-<!--  -->
-<!--  -->
-<!--  -->
-<!--  -->
